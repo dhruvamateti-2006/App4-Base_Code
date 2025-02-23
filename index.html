@@ -38,7 +38,30 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <script>
 
-	//YOUR JAVASCRIPT GOES HERE
+    var fracture_count = 0;
+    var sprain_count = 0;
+//Initial variables value set to 0//
+	
+    function sprainAdd(){
+        sprain_count = sprain_count + 1;
+	    alert("sprain count : " + sprain_count);
+    }
+//When fracture/yes button is clicked, fracture score goes up by 1//
+	
+    function fractureAdd(){
+        fracture_count = fracture_count + 1;
+	    alert("fracture count : " + fracture_count);
+    }
+//When sprain/no button is clicked, sprain score goes up by 1//
+	
+    function displayResults() {
+        var fracturePercent = (fracture_count/4) * 100;
+        var sprainPercent = (sprain_count/4) * 100;
+        var resultText = document.getElementById("results");
+        resultText.innerHTML = "Probability it's a sprain = " + sprainPercent + "%" + "<br> Probability it's a broken bone = " + fracturePercent + "%";
+    }
+//At the end, function called to display probability of allergies vs cold//
+
 
 </script>	
 
@@ -67,9 +90,85 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </style>
 
 <body>
+	<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Cold or Allergies?</h1>
+</div>
 	
-	<!-- HERE IS WHERE ALL OF YOUR HTML PAGES GO -->
-	REPLACE THIS TEXT
+<div id="content" class="w3-container">
+	<p>Your ankle hurting? Feel like you've broken a bone? Answer a few questions to see if you broke a bone or just had a good ol' sprain.</p>
+	
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+
+<div class="page" id="one">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Do you feel severe pain putting weight on a very specific site of injury?</p>    
+		<a href="#two" onclick="fractureAdd();" class="w3-btn w3-black" > Yes </a>
+		<a href="#two" onclick="sprainAdd();" class="w3-btn w3-black" > No </a>
+	</div>
+</div>
+<!--code that puts out first question and then links to question two. Adds value 1 to either allergy or cold depending on button-->
+<div class="page" id="two">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+	<p>Do you hear a crunching sound from the site of injury?</p>
+		<a href="#three" onclick="fractureAdd()"; class="w3-btn w3-black" > Yes </a>
+		<a href="#three" onclick="sprainAdd()"; class="w3-btn w3-black" > No </a>
+	</div>
+</div>	
+<!--code that puts out second question and then links to question three. Adds value 1 to either allergy or cold depending on button-->
+
+<div class="page" id="three">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+	<p>Does the limb look to be physically deformed? (Not swelling)</p>
+		<a href="#four" onclick="fractureAdd();" class="w3-btn w3-black" > Yes </a>
+		<a href="#four" onclick="sprainAdd();" class="w3-btn w3-black" > No </a>
+	</div>
+</div>	
+<!--code that puts out third question and then links to question four. Adds value 1 to either allergy or cold depending on button-->
+
+
+<div class="page" id="four">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you feel pain more on tissue or bone?</p>
+		<a href="#results" onclick="sprainAdd();" class="w3-btn w3-black" > Tissue </a>
+		<a href="#results"onclick="fractureAdd();" class="w3-btn w3-black" > Bone </a>
+	</div>
+</div>
+<!--code that puts out 4th question and then links to results. Adds value 1 to either allergy or cold depending on button-->
+
+<div class="page" id="results">
+        <div class="w3-container w3-flat-carrot">
+            <h1>Results</h1>
+        </div> 
+	
+        <div id="content" class="w3-container">
+            <a onclick="displayResults();" class="w3-btn v3-grey w3-round"> Click for results </a>
+	    <p id="results"></p>
+	</div>
+</div>
+        
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
 	
 </body>
 </html>
