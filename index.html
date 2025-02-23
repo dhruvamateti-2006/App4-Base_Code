@@ -47,6 +47,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	    alert("sprain count : " + sprain_count);
     }
 //When fracture/yes button is clicked, fracture score goes up by 1//
+//alerts user of # buttons clicked of each type//
 	
     function fractureAdd(){
         fracture_count = fracture_count + 1;
@@ -93,6 +94,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 }
 
 </style>
+<!--img code meant to fix sizing errors on phone vs laptop-->
 
 <body>
 	<div id="header" class="w3-container w3-flat-carrot">
@@ -109,7 +111,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
 	<img src="https://lincolnurgentcare.com/wp-content/uploads/2022/10/GettyImages-665240441-656b4b49d62d4e1ab29daf56a08543f2-min-e1666861471243.jpeg" alt="pic of broken bow xray">
-	
+	<!--image link for broken bone image-->
 <div class="page" id="one">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
@@ -121,7 +123,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<a href="#two" onclick="sprainAdd();" class="w3-btn w3-black" > No </a>
 	</div>
 </div>
-<!--code that puts out first question and then links to question two. Adds value 1 to either allergy or cold depending on button-->
+<!--code that puts out first question and then links to question two. Adds value 1 to either fracture or sprain depending on button. Calls function from beginning-->
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
@@ -133,7 +135,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<a href="#three" onclick="sprainAdd()"; class="w3-btn w3-black" > No </a>
 	</div>
 </div>	
-<!--code that puts out second question and then links to question three. Adds value 1 to either allergy or cold depending on button-->
+<!--code that puts out second question and then links to question three. Adds value 1 to either fracture or sprain depending on button. Calls function from beginning--->
 
 <div class="page" id="three">
 	<div class="w3-container w3-flat-carrot">
@@ -146,7 +148,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<a href="#four" onclick="sprainAdd();" class="w3-btn w3-black" > No </a>
 	</div>
 </div>	
-<!--code that puts out third question and then links to question four. Adds value 1 to either allergy or cold depending on button-->
+<!--code that puts out third question and then links to question four. Adds value 1 to either fracture or sprain depending on button. Calls function from beginning--->
 
 
 <div class="page" id="four">
@@ -160,7 +162,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<a href="#results"onclick="fractureAdd();" class="w3-btn w3-black" > Bone </a>
 	</div>
 </div>
-<!--code that puts out 4th question and then links to results. Adds value 1 to either allergy or cold depending on button-->
+<!--code that puts out 4th question and then links to results. Adds value 1 to either fracture or sprain depending on button. Calls function from beginning--->
 
 <div class="page" id="results">
         <div class="w3-container w3-flat-carrot">
@@ -172,7 +174,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	    <p id="results"></p>
 	</div>
 </div>
-        
+<!--calls display results function from beginning. Adds a button to click for results rather than just seeing them immediately.--> 
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
